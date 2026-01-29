@@ -1,3 +1,5 @@
+package com.ctos.profiler.model;
+
 public class Profile {
 
     private String name;
