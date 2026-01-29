@@ -5,7 +5,7 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-
+        BootScreen.show();
         System.out.println("=== PROFILER SYSTEM ONLINE ===");
 
         while (true) {
