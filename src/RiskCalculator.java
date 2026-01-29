@@ -10,6 +10,10 @@ public class RiskCalculator {
         if (occupation.contains("data") || occupation.contains("it")) {
             riskScore += 1;
         }
+        String hobby = profile.getHobby().toLowerCase();
+        if(hobby.contains("lockpicking")){
+            riskScore +=2;
+        }
 
         String secret = profile.getSecret().toLowerCase();
         if (secret.contains("investigation")) {
@@ -22,6 +26,9 @@ public class RiskCalculator {
             riskScore += 2;
         }
         if (secret.contains("fake")) {
+            riskScore += 2;
+        }
+        if (secret.contains("fraud")) {
             riskScore += 2;
         }
 
