@@ -48,23 +48,29 @@ public class ProfileGenerator {
     };
 
     public static Profile generateProfile() {
+
         String name = getRandomElement(NAMES);
-        int age = random.nextInt(43) + 18; // 18–60
+        int age = random.nextInt(43) + 18;
         String occupation = getRandomElement(OCCUPATIONS);
-        int income = random.nextInt(80000) + 20000; // 20k–100k
+        int income = random.nextInt(80000) + 20000;
         String hobby = getRandomElement(HOBBIES);
         String secret = getRandomElement(SECRETS);
-        String riskLevel = getRandomElement(RISK_LEVELS);
 
-        return new Profile(
+        Profile profile = new Profile(
                 name,
                 age,
                 occupation,
                 income,
                 hobby,
-                riskLevel,
+                "",        // temporary empty risk level
                 secret
         );
+
+        String riskLevel = RiskCalculator.calculateRisk(profile);
+
+        profile.setRiskLevel(riskLevel);
+
+        return profile;
     }
 
     private static String getRandomElement(String[] array) {

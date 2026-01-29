@@ -52,6 +52,9 @@ public class Profile {
     public String getSecret() {
         return secret;
     }
+    public void setRiskLevel(String riskLevel) {
+        this.riskLevel = riskLevel;
+    }
 
     @Override
     public String toString() {
