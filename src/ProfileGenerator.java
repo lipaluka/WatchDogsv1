@@ -1,7 +1,3 @@
-package com.ctos.profiler.generator;
-
-import com.ctos.profiler.model.Profile;
-
 import java.util.Random;
 
 public class ProfileGenerator {
