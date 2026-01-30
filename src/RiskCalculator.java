@@ -31,6 +31,12 @@ public class RiskCalculator {
         if (secret.contains("fraud")) {
             riskScore += 2;
         }
+        if(secret.contains("restricted")){
+            riskScore += 1;
+        }
+        if(secret.contains("bypassed")){
+            riskScore += 2;
+        }
 
         return mapScoreToRiskLevel(riskScore);
     }
