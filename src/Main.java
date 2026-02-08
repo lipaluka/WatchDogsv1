@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
         Scanner scanner = new Scanner(System.in);
         BootScreen.show();
@@ -54,8 +54,8 @@ public class Main {
 
             System.out.println("\n--- PROFILER INTERFACE ---");
             System.out.println("textView");
-            System.out.println("2) Call Interception");
-            System.out.println("3) Money Wiring");
+            System.out.println("callIntercept");
+            System.out.println("moneyWire");
             System.out.println("q) Exit Profiler");
 
             System.out.print("> ");
@@ -64,6 +64,8 @@ public class Main {
             switch (input) {
 
                 case "System.app.textView" ->ProfilerHacks.textSpying(profile);
+                case "System.app.callIntercept" ->ProfilerHacks.callInterception(profile);
+                case "System.app.moneyWire"->ProfilerHacks.moneyWiring(profile);
                 case "q", "Q" -> inProfiler = false;
 
                 default -> System.out.println("Invalid profiler command.");
@@ -73,15 +75,15 @@ public class Main {
 
     // ---------------- SYSTEM HACK MENU ----------------
 
-    private static void systemHackMenu(Scanner scanner) {
+    private static void systemHackMenu(Scanner scanner) throws InterruptedException {
 
         boolean inSystem = true;
 
         while (inSystem) {
 
-            System.out.println("\n--- SYSTEM ACCESS ---");
+            System.out.println("\n--- SYSTEM/TERMINAL ACCESS ---");
             System.out.println("cameraView");
-            System.out.println("2) Download Data");
+            System.out.println("dataDownload");
             System.out.println("q) Exit System Access");
 
             System.out.print("> ");
@@ -90,6 +92,7 @@ public class Main {
             switch (input) {
 
                 case "Terminal.access.cameraView" -> SystemHacks.cameraAccess();
+                case "Terminal.access.dataDownload"->SystemHacks.dataDownload();
 
                 case "q", "Q" -> inSystem = false;
 
